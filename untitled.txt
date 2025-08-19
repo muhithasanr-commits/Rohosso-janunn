@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <title>Friends Fun Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      text-align: center;
+      padding: 20px;
+    }
+    .box {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      width: 320px;
+      margin: auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    input, select, textarea, button {
+      width: 90%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #45a049;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+    video {
+      width: 90%;
+      margin-top: 10px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Rohosso janun</h2>
+    <input type="text" id="username" placeholder="type your name">
+    <input type="password" id="password" placeholder="password">
+
+    <select id="status">
+      <option value="married">married</option>
+      <option value="unmarried">unmarried
+</option>
+    </select>
+
+    <select id="gender">
+      <option value="male">goruchuda</option>
+      <option value="gay">gay</option>
+      <option value="trans">transgender</option>
+    </select>
+
+    <textarea id="feedback" placeholder="type your moner iccha"></textarea>
+
+    <button onclick="showResult()">Submit</button>
+
+    <div class="result" id="result"></div>
+    <div id="videoBox"></div>
+  </div>
+
+  <script>
+    function showResult() {
+      const name = document.getElementById("username").value.trim().toLowerCase();
+      const resultBox = document.getElementById("result");
+      const videoBox = document.getElementById("videoBox");
+
+      let message = "";
+      let video = "";
+
+      if(name === "mursalin") {
+        message = "tumar bou er nam ki emona na! 🙆";
+        video = "emo.mp4"; // এখানে নিজের ভিডিও ফাইলের নাম দাও
+      }
+      else if(name === "shabab") {
+        message = "yaalllaaahhh mahima vabir jamai gooo! 😍";
+        video = "mahema.mp4";
+      }
+      else if(name === "rabbi") {
+        message = "rabbi@tumi goruchuda nani? Ar sa dia biscuitkhaw ni 🙂🙆!";
+        video = "rabbi.mp4";
+      }
+      else if(name === "labib") {
+        message = "yaalllaahhh nimki vabir jamai dekha jay 🙆! ";
+        video = "labib.mp4";
+      }
+      else if(name === "naim") {
+        message = "tui to beta goruchuda . Risikar loge ja korsos cji chi chi shame on you!";
+        video = "naim.mp4";
+      }
+      else if(name === "himu") {
+        message = "yalllaahhh himu vai ni?cokh or maje hitat alo porate ow buji laisi tumi je himu vai.germany nani tumar dream.samiya vabi vala ache ni!ruhimu 🫦! 🔥";
+        video = "himu.mp4";
+      }
+      else if(name===muttakin) {
+        message = "yaalllaahhh kita re thala bashon maja ses ni!😅";
+        video = "";
+      }
+
+      resultBox.innerHTML = message;
+      if(video) {
+        videoBox.innerHTML = `<video controls><source src="${video}" type="video/mp4"></video>`;
+      } else {
+        videoBox.innerHTML = "";
+      }
+    }
+  </script>
+</body>
+</html>
